@@ -5,6 +5,7 @@ import DiscountTag from './DiscountTag'
 import { addPercentage, formatCurrency } from '@/lib/utils'
 import Image from 'next/image'
 import ProductActions from './ProductActions'
+import { AspectRatio } from '../ui/aspect-ratio'
 
 type Props = {
   product: Product
@@ -14,7 +15,9 @@ const ProductCard: FC<Props> = ({ product }) => {
   return (
     <div className='w-full p-4 rounded-[8px] hover:shadow-md group bg-white relative flex flex-col h-full group'>
       <div className='relative w-full group-hover:bg-black/25 rounded-[8px]'>
-        <Image className='rounded-[6px]' width={210} height={210} src={product.thumbnail} alt={product.title} />
+        <AspectRatio ratio={1}>
+          <img className='rounded-[6px] w-full h-full object-cover' src={product.thumbnail} alt={product.title} />
+        </AspectRatio>
         <div className='absolute w-full bottom-2 hidden group-hover:flex flex-col gap-2 px-4 z-20'>
           <ProductActions product={product} />
         </div>

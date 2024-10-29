@@ -13,7 +13,7 @@ const CartItem: FC<Props> = ({ product }) => {
   const updateQuantity = useCartStore((state) => state.updateQuantity)
 
   return (
-    <div className='w-full flex items-start gap-2'>
+    <div className='w-full flex items-start gap-4'>
       <Image className='rounded-[6px]' src={product.imageUrl} width={100} height={100} alt={product.name} />
       <div className='w-full'>
         <h3 className='font-medium line-clamp-1'>

@@ -1,6 +1,6 @@
 import { ProductsResponse } from '@/types'
 
-const ENDPOINT = 'https://dummyjson.com/products?limit=20'
+const ENDPOINT = 'https://dummyjson.com/products?limit=5'
 
 export const fetchProducts = async () => {
   const resp = await fetch(ENDPOINT, { cache: 'force-cache' }).then((res) => res.json())
