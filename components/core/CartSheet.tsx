@@ -10,7 +10,7 @@ const CartSheet = () => {
   const products = useCartStore((state) => state.products)
   const getTotal = useCartStore((state) => state.getTotal)
 
-  if (!products.length) {
+  if (products.length === 0) {
     return null
   }
 
