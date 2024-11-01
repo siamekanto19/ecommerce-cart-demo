@@ -1,6 +1,7 @@
 import React from 'react'
 import './globals.css'
 import { Murecho } from 'next/font/google'
+import Providers from '@/components/providers'
 
 const murecho = Murecho({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -15,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${murecho.className} antialiased`}>{children}</body>
+      <body className={`${murecho.className} antialiased`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
