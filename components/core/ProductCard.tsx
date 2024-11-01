@@ -1,11 +1,10 @@
 'use client'
-import { Product } from '@/types'
-import React, { FC } from 'react'
-import DiscountTag from './DiscountTag'
 import { addPercentage, formatCurrency } from '@/lib/utils'
-import Image from 'next/image'
-import ProductActions from './ProductActions'
+import { Product } from '@/types'
+import { FC } from 'react'
 import { AspectRatio } from '../ui/aspect-ratio'
+import DiscountTag from './DiscountTag'
+import ProductActions from './ProductActions'
 
 type Props = {
   product: Product
@@ -14,9 +13,9 @@ type Props = {
 const ProductCard: FC<Props> = ({ product }) => {
   return (
     <div className='w-full p-4 rounded-[8px] hover:shadow-md group bg-white relative flex flex-col h-full group'>
-      <div className='relative w-full group-hover:bg-black/25 rounded-[8px]'>
+      <div className='relative h-[15rem] w-full group-hover:bg-black/25 rounded-[8px]'>
         <AspectRatio ratio={1}>
-          <img className='rounded-[6px] w-full h-full object-cover' src={product.thumbnail} alt={product.title} />
+          <img className='rounded-[6px] w-full h-[15rem] object-cover' src={product.thumbnail} alt={product.title} />
         </AspectRatio>
         <div className='absolute w-full bottom-2 hidden group-hover:flex flex-col gap-2 px-4 z-20'>
           <ProductActions product={product} />
