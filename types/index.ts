@@ -1,3 +1,20 @@
+export type CartProduct = {
+  id: number
+  name: string
+  imageUrl: string
+  price: number
+  quantity: number
+}
+
+export type CartState = {
+  products: CartProduct[]
+  addProduct: (product: CartProduct) => void
+  removeProduct: (productId: number) => void
+  updateQuantity: (id: number, quantity: number) => void
+  clearCart: () => void
+  getTotal: () => number
+}
+
 export interface ProductsResponse {
   products: Product[]
   total: number

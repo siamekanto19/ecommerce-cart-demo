@@ -1,22 +1,5 @@
-import { Product } from '@/types'
+import { CartState } from '@/types'
 import { create } from 'zustand'
-
-export type CartProduct = {
-  id: number
-  name: string
-  imageUrl: string
-  price: number
-  quantity: number
-}
-
-type CartState = {
-  products: CartProduct[]
-  addProduct: (product: CartProduct) => void
-  removeProduct: (productId: number) => void
-  updateQuantity: (id: number, quantity: number) => void
-  clearCart: () => void
-  getTotal: () => number
-}
 
 export const useCartStore = create<CartState>((set) => ({
   products: [],

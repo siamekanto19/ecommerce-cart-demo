@@ -1,6 +1,7 @@
 'use client'
 import { formatCurrency } from '@/lib/utils'
-import { CartProduct, useCartStore } from '@/stores'
+import { useCartStore } from '@/stores'
+import { CartProduct } from '@/types'
 import { Minus, Plus } from 'lucide-react'
 import Image from 'next/image'
 import React, { FC } from 'react'

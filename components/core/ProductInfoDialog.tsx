@@ -8,6 +8,7 @@ import { Badge } from '../ui/badge'
 import { useCartStore } from '@/stores'
 import { Button } from '../ui/button'
 import { Minus, Plus } from 'lucide-react'
+import ProductTags from './ProductTags'
 
 type Props = {
   product: Product
@@ -45,13 +46,7 @@ const ProductInfoDialog: FC<Props> = ({ product, isOpen, setIsOpen }) => {
           <h3 className='text-lg text-muted-foreground line-through'>{formatCurrency(addPercentage(product.price, product.discountPercentage))}</h3>
         </div>
         <p className='text-base text-muted-foreground'>{product.description}</p>
-        <div className='flex items-center gap-2 flex-wrap'>
-          {product.tags.map((tag) => (
-            <Badge variant='secondary' className='text-sm py-1 px-4 font-normal'>
-              {tag}
-            </Badge>
-          ))}
-        </div>
+        <ProductTags tags={product.tags} />
         <div className='pt-6'>
           {productInCart ? (
             <div className='h-12 w-full rounded-[6px] px-2 flex items-center justify-between bg-green-600 text-white text-sm font-medium'>
