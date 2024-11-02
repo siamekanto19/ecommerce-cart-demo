@@ -1,13 +1,14 @@
 import { ProductsResponse } from '@/types'
 import axios from 'axios'
 
-const ENDPOINT = 'https://dummyjson.com/products'
+const ENDPOINT = 'https://dummyjson.com/products/search'
 
 type FetchProductParams = {
   limit?: number
   skip?: number
   sortBy?: string
   order?: 'asc' | 'desc'
+  keyword?: string
 }
 
 export const fetchProducts = async (params: FetchProductParams) => {
@@ -19,6 +20,7 @@ export const fetchProducts = async (params: FetchProductParams) => {
       skip: params.skip ? params.skip : undefined,
       sortBy: params.sortBy ? params.sortBy : undefined,
       order: params.order ? params.order : undefined,
+      q: params.keyword ? params.keyword : undefined,
     },
   })
 

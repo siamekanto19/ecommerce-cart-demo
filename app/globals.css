@@ -6,6 +6,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body button,
+input:not([role='combobox']),
+textarea {
+  @apply focus-visible:!ring-slate-950 dark:focus-visible:!ring-slate-50 focus-visible:!ring-[1.5px] dark:focus-visible:ring-[1.5px] focus-visible:ring-offset-2;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
